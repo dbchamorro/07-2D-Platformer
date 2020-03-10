@@ -1,2 +1,2 @@
-# 07-2D-Platformer
-A simplistic 2D game. 
+# Project-Template-Godot
+A default Godot project template for MSCH-C220

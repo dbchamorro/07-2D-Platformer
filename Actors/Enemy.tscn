@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Actors/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://WolfOGA/Wolf/Idle/__Wolf_Idle_007.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 44.9728, 59.318 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 104.835, 58.7933 )
+
+[node name="Enemy" type="KinematicBody2D"]
+modulate = Color( 0.996078, 0.996078, 0.996078, 1 )
+scale = Vector2( 0.181237, 0.13607 )
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 1 )
+
+[node name="enemy" type="Sprite" parent="."]
+position = Vector2( -0.000366211, -169.031 )
+rotation = -3.14159
+scale = Vector2( 0.999044, -1.18254 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.52588e-05, 51.4441 )
+scale = Vector2( 3.74716, 1.72301 )
+shape = SubResource( 1 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 0, 51.4441 )
+scale = Vector2( 18.8127, 4.78378 )
+process_parent = true
+physics_process_parent = true
+
+[node name="StompDetector" type="Area2D" parent="."]
+modulate = Color( 0.176471, 0.94902, 0.00392157, 1 )
+monitorable = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
+position = Vector2( -1.90735e-05, -66.1424 )
+scale = Vector2( 2.06485, 0.85266 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
