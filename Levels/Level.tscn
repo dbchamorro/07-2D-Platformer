@@ -12,8 +12,11 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 70, 40, 0, 40, 0, 0, 70, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 70, 40, 0, 40, 0, 0, 70, 0 )
@@ -21,10 +24,7 @@ points = PoolVector2Array( 70, 40, 0, 40, 0, 0, 70, 0 )
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 70, 40, 0, 40, 0, 0, 70, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 70, 40, 0, 40, 0, 0, 70, 0 )
-
-[sub_resource type="TileSet" id=2]
+[sub_resource type="TileSet" id=6]
 0/name = "tundraCenter.png 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
@@ -53,7 +53,7 @@ points = PoolVector2Array( 70, 40, 0, 40, 0, 0, 70, 0 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -69,7 +69,7 @@ points = PoolVector2Array( 70, 40, 0, 40, 0, 0, 70, 0 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 4 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -85,7 +85,7 @@ points = PoolVector2Array( 70, 40, 0, 40, 0, 0, 70, 0 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 5 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
@@ -101,7 +101,7 @@ points = PoolVector2Array( 70, 40, 0, 40, 0, 0, 70, 0 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
@@ -120,30 +120,48 @@ points = PoolVector2Array( 70, 40, 0, 40, 0, 0, 70, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 63, 0 )
-tile_set = SubResource( 2 )
+tile_set = SubResource( 6 )
+collision_layer = 2
 format = 1
 tile_data = PoolIntArray( 131071, 0, 0, 65536, 0, 0, 196607, 0, 0, 131072, 0, 0, 262143, 0, 0, 196608, 0, 0, 196643, 1, 0, 196644, 1, 0, 196645, 1, 0, 196646, 1, 0, 327679, 0, 0, 262144, 0, 0, 262154, 2, 0, 262155, 4, 0, 262156, 3, 0, 262176, 1, 0, 262179, 0, 0, 262180, 0, 0, 262181, 0, 0, 262182, 0, 0, 393215, 0, 0, 327680, 0, 0, 327694, 2, 0, 327695, 4, 0, 327696, 3, 0, 327710, 1, 0, 327712, 0, 0, 327715, 0, 0, 327716, 0, 0, 327717, 0, 0, 327718, 0, 0, 458751, 0, 0, 393216, 0, 0, 393224, 1, 0, 393225, 1, 0, 393242, 2, 0, 393243, 3, 0, 393246, 0, 0, 393248, 0, 0, 393251, 0, 0, 393252, 0, 0, 393253, 0, 0, 393254, 0, 0, 524287, 0, 0, 458752, 0, 0, 458759, 1, 0, 458760, 0, 0, 458761, 0, 0, 458765, 1, 0, 458766, 1, 0, 458775, 2, 0, 458776, 3, 0, 458782, 0, 0, 458784, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 589823, 0, 0, 524288, 0, 0, 524294, 1, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524301, 0, 0, 524302, 0, 0, 524308, 2, 0, 524309, 3, 0, 524318, 0, 0, 524320, 0, 0, 524323, 0, 0, 524324, 0, 0, 524325, 0, 0, 524326, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 5, 0, 589835, 5, 0, 589836, 5, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 5, 0, 589856, 0, 0, 589857, 5, 0, 589858, 5, 0, 589859, 0, 0, 589860, 0, 0, 589861, 0, 0, 589862, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 655392, 0, 0, 655393, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 720928, 0, 0, 851967, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786464, 0, 0, 917503, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 851998, 0, 0, 851999, 0, 0, 852000, 0, 0 )
 
-[node name="Enemy" parent="TileMap" instance=ExtResource( 7 )]
-position = Vector2( 1127, 530 )
-
-[node name="Enemy2" parent="TileMap" instance=ExtResource( 7 )]
-position = Vector2( 428, 464 )
-
-[node name="Enemy3" parent="TileMap" instance=ExtResource( 7 )]
-position = Vector2( 1530, 792 )
-
-[node name="Enemy4" parent="TileMap" instance=ExtResource( 7 )]
-position = Vector2( 1350, 796 )
-
-[node name="Enemy5" parent="TileMap" instance=ExtResource( 7 )]
-position = Vector2( 1878, 520 )
-
-[node name="Enemy6" parent="TileMap" instance=ExtResource( 7 )]
-position = Vector2( 2031, 612 )
-
-[node name="Enemy7" parent="TileMap" instance=ExtResource( 7 )]
-position = Vector2( 2209, 604 )
-
 [node name="Player" parent="." instance=ExtResource( 8 )]
-position = Vector2( 160, 266 )
+position = Vector2( 830, 74 )
+gravity = 500.0
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 1190, 530 )
+collision_layer = 4
+collision_mask = 15
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 491, 464 )
+collision_layer = 4
+collision_mask = 15
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 1593, 792 )
+collision_layer = 4
+collision_mask = 15
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 1413, 796 )
+collision_layer = 4
+collision_mask = 15
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 1941, 520 )
+collision_layer = 4
+collision_mask = 15
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 2094, 612 )
+collision_layer = 4
+collision_mask = 15
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 2272, 604 )
+collision_layer = 4
+collision_mask = 15
