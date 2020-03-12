@@ -16,9 +16,14 @@ func _physics_process(delta: float) -> void:
 	var snap: Vector2 = Vector2.DOWN * 60.0 if direction.y == 0.0 else Vector2.ZERO
 	_velocity - move_and_slide(_velocity, FLOOR_NORMAL)
 
+func on_floor():
+	if $Floor.is_colliding():
+		return true
+	return false
+
 func get_direction() -> Vector2:
 	return Vector2( Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-	 - Input.get_action_strength("jump") if is_on_floor() and Input.is_action_just_pressed("jump") else 0.0
+	 - Input.get_action_strength("jump") if on_floor() and Input.is_action_just_pressed("jump") else 0.0
 	) 
 
 func calculate_move_velocity(linear_velocity: Vector2, direction: Vector2, speed: Vector2, is_jump_interrupted: bool) -> Vector2:
