@@ -23,7 +23,7 @@ func on_floor():
 
 func get_direction() -> Vector2:
 	return Vector2( Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-	 - Input.get_action_strength("ui_up") if on_floor() and Input.is_action_just_pressed("jump") else 0.0
+	 - Input.get_action_strength("jump") if on_floor() and Input.is_action_just_pressed("ui_up") else 0.0
 	) 
 
 func calculate_move_velocity(linear_velocity: Vector2, direction: Vector2, speed: Vector2, is_jump_interrupted: bool) -> Vector2:
