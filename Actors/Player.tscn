@@ -10,6 +10,7 @@ extents = Vector2( 18.0813, 49.6408 )
 extents = Vector2( 13.5988, 26.6215 )
 
 [node name="Player" type="KinematicBody2D"]
+scale = Vector2( 0.8, 0.7 )
 collision_mask = 14
 script = ExtResource( 2 )
 __meta__ = {
@@ -24,7 +25,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 76, -76 )
+position = Vector2( 0, 1.52588e-05 )
 current = true
 
 [node name="Floor" type="RayCast2D" parent="."]

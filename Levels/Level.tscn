@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://platformergraphics-iceworld/Tiles/tundraCenter.png" type="Texture" id=1]
 [ext_resource path="res://platformergraphics-iceworld/Tiles/tundraHalfRight.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Actors/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://User Interface/UserInterface.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://background-elements-redux/Backgrounds/backgroundForest.png" type="Texture" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
@@ -120,6 +121,20 @@ points = PoolVector2Array( 70, 40, 0, 40, 0, 0, 70, 0 )
 
 [node name="Level" type="Node2D"]
 position = Vector2( -71, 0 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -116.0
+margin_right = 1024.0
+margin_bottom = 908.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 
