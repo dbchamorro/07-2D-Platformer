@@ -56,13 +56,13 @@ __meta__ = {
 }
 
 [node name="RetryButton" parent="PauseOverlay/VBoxContainer" instance=ExtResource( 5 )]
+margin_right = 222.0
+margin_bottom = 59.0
+
+[node name="ChangeSceneButton" parent="PauseOverlay/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 63.0
 margin_right = 222.0
 margin_bottom = 122.0
-
-[node name="ChangeSceneButton" parent="PauseOverlay/VBoxContainer" instance=ExtResource( 3 )]
-margin_right = 222.0
-margin_bottom = 59.0
 text = "Main Screen"
 next_scene_path = "res://Screen/MainScreen.tscn"
 

@@ -157,37 +157,30 @@ gravity = 500.0
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 1190, 530 )
-collision_layer = 4
 collision_mask = 15
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 491, 464 )
-collision_layer = 4
 collision_mask = 15
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 1593, 792 )
-collision_layer = 4
 collision_mask = 15
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 1413, 796 )
-collision_layer = 4
 collision_mask = 15
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 1941, 520 )
-collision_layer = 4
 collision_mask = 15
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 813, 595 )
-collision_layer = 4
 collision_mask = 15
 
 [node name="Enemy7" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 2272, 604 )
-collision_layer = 4
 collision_mask = 15
 
 [node name="Coin5" parent="." instance=ExtResource( 10 )]
