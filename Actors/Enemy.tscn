@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Actors/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://WolfOGA/Wolf/Idle/__Wolf_Idle_007.png" type="Texture" id=2]
@@ -9,12 +9,16 @@ extents = Vector2( 44.9728, 59.318 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 104.835, 58.7933 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 233.293, 70.7722 )
+
 [node name="Enemy" type="KinematicBody2D"]
 modulate = Color( 0.996078, 0.996078, 0.996078, 1 )
 scale = Vector2( 0.181237, 0.13607 )
-collision_layer = 2
-collision_mask = 9
+collision_layer = 4
+collision_mask = 11
 script = ExtResource( 1 )
+speed = Vector2( 100, 500 )
 
 [node name="enemy" type="Sprite" parent="."]
 position = Vector2( -0.000366211, -169.031 )
@@ -42,4 +46,10 @@ collision_layer = 0
 position = Vector2( -1.90735e-05, -66.1424 )
 scale = Vector2( 1.70504, 0.30144 )
 shape = SubResource( 2 )
+
+[node name="WallDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallDetector"]
+shape = SubResource( 3 )
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
+[connection signal="body_entered" from="WallDetector" to="." method="_on_WallDetector_body_entered"]
