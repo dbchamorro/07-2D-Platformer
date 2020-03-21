@@ -22,12 +22,12 @@ func _on_StompDetector_body_entered(body:PhysicsBody2D) -> void:
 
 func _physics_process(delta: float) -> void:
 	_velocity.y += gravity * delta
-	if is_on_wall():
-		_velocity.x *= -1.0
-	else:
-		1
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 
 func die() -> void:
 	PlayerData.score += score
 	queue_free()
+
+
+func _on_WallDetector_body_entered(body):
+	_velocity.x *= -1.0
