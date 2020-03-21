@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://background-elements-redux/PNG/Default/houseSmallAlt2.png" type="Texture" id=1]
+[ext_resource path="res://src/Objects/Portal 2D.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Level2.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.4544, 33.13 )
@@ -65,6 +67,8 @@ tracks/1/keys = {
 position = Vector2( -6, -78 )
 monitorable = false
 collision_layer = 0
+script = ExtResource( 2 )
+next_scene = ExtResource( 3 )
 
 [node name="House" type="Sprite" parent="."]
 position = Vector2( 1.14441e-05, -1.90735e-06 )

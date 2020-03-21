@@ -34,7 +34,6 @@ process_parent = true
 physics_process_parent = true
 
 [node name="StompDetector" type="Area2D" parent="."]
-visible = false
 modulate = Color( 0.176471, 0.94902, 0.00392157, 1 )
 monitorable = false
 collision_layer = 0
